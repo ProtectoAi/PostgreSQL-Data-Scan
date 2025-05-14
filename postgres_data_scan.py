@@ -61,7 +61,7 @@ def prepare_payload(data_source_name, object_name, columns, rows):
 
     for row in rows:
         for col, value in zip(columns, row):
-            column_samples[col].append(value if value else '')
+            column_samples[col].append(str(value) if value is not None else '')
 
 
     for column_name, samples in column_samples.items():
